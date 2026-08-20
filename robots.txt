@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pankajbhagat-bloom.github.io/Carmel-School-Brambe-website/sitemap.xml
