@@ -8,6 +8,9 @@
   <meta name="description" content="Carmel School Brambe is a leading ICSE school in Ranchi, Jharkhand, near the CUJ campus, offering values-based education from nursery through senior secondary." />
   <meta name="keywords" content="Carmel School Brambe, ICSE school Ranchi, top school in Ranchi, best school near CUJ, school in Jharkhand" />
   <link rel="canonical" href="https://pankajbhagat-bloom.github.io/Carmel-School-Brambe-website/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
 
   <!-- Open Graph / Social sharing -->
   <meta property="og:type" content="website" />
@@ -35,6 +38,7 @@
     "logo": "https://pankajbhagat-bloom.github.io/Carmel-School-Brambe-website/images/img2.jpeg",
     "image": "https://pankajbhagat-bloom.github.io/Carmel-School-Brambe-website/images/nature-camp-group.jpg",
     "telephone": "+91-88092-78554",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Carmel+School+Brambe+Mandar+Ranchi+Jharkhand",
     "email": "info@carmelschoolbrambe.edu.in",
     "address": {
       "@type": "PostalAddress",
@@ -844,7 +848,7 @@
 <!-- NAVBAR -->
 <header>
 <nav>
-  <a class="nav-logo" href="#" aria-label="Carmel School Brambe home">
+  <a class="nav-logo" href="#home" aria-label="Carmel School Brambe home">
     <div class="nav-logo-icon"><img src="images/img2.jpeg" width="400" height="400" alt="Carmel School Brambe official logo" /></div>
     <div class="nav-logo-text">
       <div class="school-name">CARMEL SCHOOL BRAMBE</div>
@@ -852,10 +856,11 @@
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="#school-info">Our Story</a></li>
     <li><a href="#academics">Academics</a></li>
+    <li><a href="#facilities">Facilities</a></li>
     <li><a href="#gallery">Campus Life</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#videos">Videos</a></li>
@@ -870,11 +875,12 @@
 </nav>
 <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 <ul class="mobile-menu" id="mobileMenu">
-  <li><a href="#" class="active">Home</a></li>
+  <li><a href="#home" class="active">Home</a></li>
   <li><a href="#about">About Us</a></li>
   <li><a href="#school-info">Our Story</a></li>
   <li><a href="#academics">Academics</a></li>
-  <li><a href="#gallery">Campus Life</a></li>
+  <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#gallery">Campus Life</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#videos">Videos</a></li>
   <li><a href="#principal">Principal</a></li>
@@ -1027,7 +1033,7 @@
 </section>
 
 <!-- STATS -->
-<div class="stats-section" id="facilities">
+<div class="stats-section" id="stats">
   <div class="stats-inner">
     <div class="stat-item">
       <div class="stat-icon">🏫</div>
@@ -1051,6 +1057,50 @@
     </div>
   </div>
 </div>
+
+<!-- FACILITIES -->
+<section class="about" id="facilities" style="padding:90px 20px;background:var(--cream);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="campus-header" style="margin-bottom:48px;">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Our Facilities</h2>
+      <div class="title-underline"></div>
+      <p style="font-size:15px;color:var(--text-light);margin-top:8px;">Everything a student needs to learn, grow and thrive — right on campus.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">🔬</div>
+        <h4>Science Laboratories</h4>
+        <p>Well-equipped physics, chemistry and biology labs where students learn through hands-on experiments and demonstrations.</p>
+      </div>
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">📚</div>
+        <h4>Library</h4>
+        <p>A quiet, well-stocked reading space with textbooks, reference material, newspapers and periodicals for every grade level.</p>
+      </div>
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">💻</div>
+        <h4>Smart Classrooms</h4>
+        <p>Classrooms equipped with digital displays and interactive teaching tools that make lessons more engaging and visual.</p>
+      </div>
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">⚽</div>
+        <h4>Sports Ground</h4>
+        <p>A spacious outdoor ground for athletics, football, and physical education, along with inter-house sports competitions.</p>
+      </div>
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">🚌</div>
+        <h4>School Transport</h4>
+        <p>Dedicated school buses covering Ranchi, Mandar, Brambe and the surrounding areas for safe daily commuting.</p>
+      </div>
+      <div class="info-card" style="margin-bottom:0;">
+        <div class="info-card-icon">🎭</div>
+        <h4>Auditorium &amp; Assembly Hall</h4>
+        <p>A large hall for school assemblies, cultural programs, annual day celebrations and community events.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CAMPUS LIFE / GALLERY -->
 <section class="campus" id="gallery">
@@ -1092,6 +1142,66 @@
     <div class="gallery-item">
       <img src="images/community-assembly.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe assembly hall during a parent and community meeting" />
       <div class="gallery-overlay"><span>🎤</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/annual-day-aerial.jpg" width="1280" height="720" loading="lazy" alt="Aerial view of the entire school assembled on the ground at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>🏫</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/campus-building.jpg" width="1280" height="720" loading="lazy" alt="Carmel School Brambe campus building exterior in Brambe, Ranchi" />
+      <div class="gallery-overlay"><span>🏛️</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/campus-buses.jpg" width="1280" height="720" loading="lazy" alt="School buses lined up on the Carmel School Brambe campus" />
+      <div class="gallery-overlay"><span>🚌</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/sports-ground.jpg" width="1280" height="720" loading="lazy" alt="Sports ground at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>⚽</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/sports-team.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe sports team group photo on the field" />
+      <div class="gallery-overlay"><span>🏆</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/marching-band.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students in a marching band parade formation" />
+      <div class="gallery-overlay"><span>🥁</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/waterfall-excursion.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students on an educational excursion to a waterfall" />
+      <div class="gallery-overlay"><span>🥾</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/flag-hoisting.jpg" width="1280" height="724" loading="lazy" alt="Flag hoisting ceremony at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>🇮🇳</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cultural-program.jpg" width="1280" height="960" loading="lazy" alt="Students performing in a cultural program on stage at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>🎭</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/drama-performance.jpg" width="1280" height="960" loading="lazy" alt="Students in costume during a drama performance at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>🎬</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/tree-plantation.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students taking part in a tree plantation drive" />
+      <div class="gallery-overlay"><span>🌳</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/smart-classroom.jpg" width="1280" height="960" loading="lazy" alt="Digital smart classroom with interactive display at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>💻</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/student-project.jpg" width="1280" height="960" loading="lazy" alt="Young student presenting a science project at Carmel School Brambe" />
+      <div class="gallery-overlay"><span>🧠</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/annual-day-group.jpg" width="1280" height="960" loading="lazy" alt="Staff and students in traditional attire at Carmel School Brambe annual day" />
+      <div class="gallery-overlay"><span>🎉</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/science-lab-3.jpg" width="1280" height="720" loading="lazy" alt="Carmel School Brambe science laboratory workstations and equipment" />
+      <div class="gallery-overlay"><span>⚗️</span></div>
     </div>
   </div>
 </section>
@@ -1382,6 +1492,29 @@
 
 </main>
 
+<!-- LOCATION MAP -->
+<section class="about" id="location" style="padding:80px 20px;background:var(--white);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="campus-header" style="margin-bottom:40px;">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Our Location</h2>
+      <div class="title-underline"></div>
+      <p style="font-size:15px;color:var(--text-light);margin-top:8px;">Carmel School Brambe, near the CUJ campus, Mandar, Ranchi, Jharkhand.</p>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.1);border:1px solid var(--border);">
+      <iframe
+        src="https://www.google.com/maps?q=Carmel+School+Brambe+Mandar+Ranchi+Jharkhand&output=embed"
+        width="100%" height="420" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Carmel School Brambe location map">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="https://www.google.com/maps/search/?api=1&query=Carmel+School+Brambe+Mandar+Ranchi+Jharkhand" target="_blank" rel="noopener" class="btn-enquiry" style="display:inline-block;text-decoration:none;">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact">
   <div class="footer-grid">
@@ -1396,7 +1529,7 @@
         <a class="social-link" href="https://www.facebook.com/carmelschoolbrambe" target="_blank" title="Facebook">f</a>
         <a class="social-link" href="#" title="Instagram">ig</a>
         <a class="social-link" href="https://youtube.com/@carmelschoolbrambe8666" target="_blank" title="YouTube">▶</a>
-        <a class="social-link" href="#" title="Email">✉</a>
+        <a class="social-link" href="mailto:info@carmelschoolbrambe.edu.in" title="Email">✉</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1406,7 +1539,9 @@
         <li><a href="#about">About Us</a></li>
     <li><a href="#school-info">Our Story</a></li>
         <li><a href="#academics">Academics</a></li>
-        <li><a href="#gallery">Campus Life</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#gallery">Campus Life</a></li>
+        <li><a href="#location">Location</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -1437,7 +1572,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Carmel School Brambe. All Rights Reserved.</span>
-    <span>Designed with ♥ for <a href="#">Carmel School Brambe</a></span>
+    <span>Designed with ♥ for <a href="#home">Carmel School Brambe</a></span>
   </div>
 </footer>
 
