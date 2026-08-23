@@ -390,20 +390,13 @@
     .gallery-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
     .gallery-item {
       background: var(--light-bg); border-radius: 10px;
-      aspect-ratio: 1; overflow: hidden; position: relative;
+      aspect-ratio: 4/3; overflow: hidden; position: relative;
       cursor: pointer;
       transition: transform 0.25s, box-shadow 0.25s;
     }
     .gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
     .gallery-item:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gallery-overlay {
-      position: absolute; inset: 0; background: rgba(123,28,46,0.7);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.25s;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span { font-size: 28px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--light-bg); }
 
     /* ── FOOTER ── */
     footer {
@@ -839,6 +832,49 @@
       .yt-subscribe-strip { flex-direction: column; align-items: flex-start; }
     }
 
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    /* ── FLOATING CONTACT BUTTONS ── */
+    .floating-contact {
+      position: fixed; right: 22px; bottom: 22px; z-index: 900;
+      display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+    }
+    .float-btn {
+      width: 54px; height: 54px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; text-decoration: none; color: var(--white);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+    }
+    .float-btn:hover { transform: scale(1.08); }
+    .float-btn.whatsapp { background: #25D366; }
+    .float-btn.call { background: var(--maroon); }
+    @media (max-width: 768px) {
+      .floating-contact { right: 14px; bottom: 14px; }
+      .float-btn { width: 48px; height: 48px; font-size: 20px; }
+    }
+
+    /* ── HOUSE SYSTEM ── */
+    .house-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    .house-card {
+      border-radius: 16px; padding: 32px 24px; text-align: center;
+      color: var(--white); position: relative; overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .house-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+    .house-card .house-icon { font-size: 36px; margin-bottom: 12px; }
+    .house-card h4 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .house-card p { font-size: 13px; opacity: 0.9; line-height: 1.6; }
+    .house-red { background: linear-gradient(135deg, #c62828, #8e1616); }
+    .house-green { background: linear-gradient(135deg, #2e7d32, #1b5e20); }
+    .house-yellow { background: linear-gradient(135deg, #f9a825, #c17900); }
+    .house-blue { background: linear-gradient(135deg, #1565c0, #0d3d75); }
+    @media (max-width: 768px) {
+      .house-grid { grid-template-columns: repeat(2,1fr); }
+    }
+
   </style>
 </head>
 <body>
@@ -861,6 +897,7 @@
     <li><a href="#school-info">Our Story</a></li>
     <li><a href="#academics">Academics</a></li>
     <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#houses">Houses</a></li>
     <li><a href="#gallery">Campus Life</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#videos">Videos</a></li>
@@ -880,6 +917,7 @@
   <li><a href="#school-info">Our Story</a></li>
   <li><a href="#academics">Academics</a></li>
   <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#houses">Houses</a></li>
     <li><a href="#gallery">Campus Life</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#videos">Videos</a></li>
@@ -939,7 +977,7 @@
 </div>
 
 <!-- ABOUT -->
-<section class="about" id="about">
+<section class="about reveal" id="about">
   <div class="about-inner">
     <div class="about-image-wrap">
       <div class="about-image">
@@ -990,7 +1028,7 @@
 </section>
 
 <!-- ACADEMICS -->
-<section class="academics" id="academics">
+<section class="academics reveal" id="academics">
   <div class="academics-header">
     <div class="section-label">Academics</div>
     <h2 class="section-title">Learning for Every Stage</h2>
@@ -1059,7 +1097,7 @@
 </div>
 
 <!-- FACILITIES -->
-<section class="about" id="facilities" style="padding:90px 20px;background:var(--cream);">
+<section class="about reveal" id="facilities" style="padding:90px 20px;background:var(--cream);">
   <div style="max-width:1180px;margin:0 auto;">
     <div class="campus-header" style="margin-bottom:48px;">
       <div class="section-label">What We Offer</div>
@@ -1102,8 +1140,42 @@
   </div>
 </section>
 
+<!-- HOUSE SYSTEM -->
+<section class="about reveal" id="houses" style="padding:80px 20px;background:var(--white);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="campus-header" style="margin-bottom:44px;">
+      <div class="section-label">School Spirit</div>
+      <h2 class="section-title">Our House System</h2>
+      <div class="title-underline"></div>
+      <p style="font-size:15px;color:var(--text-light);margin-top:8px;">Every student belongs to one of four houses, building teamwork, leadership and healthy competition through the year.</p>
+    </div>
+    <div class="house-grid">
+      <div class="house-card house-red">
+        <div class="house-icon">🔴</div>
+        <h4>Red House</h4>
+        <p>Courage and determination</p>
+      </div>
+      <div class="house-card house-green">
+        <div class="house-icon">🟢</div>
+        <h4>Green House</h4>
+        <p>Growth and harmony</p>
+      </div>
+      <div class="house-card house-yellow">
+        <div class="house-icon">🟡</div>
+        <h4>Yellow House</h4>
+        <p>Positivity and energy</p>
+      </div>
+      <div class="house-card house-blue">
+        <div class="house-icon">🔵</div>
+        <h4>Blue House</h4>
+        <p>Wisdom and calm focus</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CAMPUS LIFE / GALLERY -->
-<section class="campus" id="gallery">
+<section class="campus reveal" id="gallery">
   <div class="campus-header">
     <div class="section-label">Campus Life</div>
     <h2 class="section-title">Life at Carmel</h2>
@@ -1113,101 +1185,75 @@
   <div class="gallery-grid">
     <div class="gallery-item">
       <img src="images/nature-camp-group.jpg" width="1600" height="1200" loading="lazy" alt="Carmel School Brambe students and teachers on a nature camp trip among pine trees" />
-      <div class="gallery-overlay"><span>🌲</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/science-lab-1.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe science laboratory with lab benches and a skeleton model" />
-      <div class="gallery-overlay"><span>🔬</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/chemistry-lab-students.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students conducting a chemistry experiment with their teacher" />
-      <div class="gallery-overlay"><span>⚗️</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/library-1.jpg" width="1280" height="960" loading="lazy" alt="Students reading together in the Carmel School Brambe library" />
-      <div class="gallery-overlay"><span>📚</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/classroom-1.jpg" width="1280" height="720" loading="lazy" alt="Teacher conducting a lesson in a Carmel School Brambe classroom" />
-      <div class="gallery-overlay"><span>✏️</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/library-2.jpg" width="1280" height="720" loading="lazy" alt="Students studying at the reading tables in the Carmel School Brambe library" />
-      <div class="gallery-overlay"><span>📖</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/science-lab-2.jpg" width="1280" height="960" loading="lazy" alt="Well-equipped science laboratory with storage cabinets at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🧪</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/community-assembly.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe assembly hall during a parent and community meeting" />
-      <div class="gallery-overlay"><span>🎤</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/annual-day-aerial.jpg" width="1280" height="720" loading="lazy" alt="Aerial view of the entire school assembled on the ground at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🏫</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/campus-building.jpg" width="1280" height="720" loading="lazy" alt="Carmel School Brambe campus building exterior in Brambe, Ranchi" />
-      <div class="gallery-overlay"><span>🏛️</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/campus-buses.jpg" width="1280" height="720" loading="lazy" alt="School buses lined up on the Carmel School Brambe campus" />
-      <div class="gallery-overlay"><span>🚌</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/sports-ground.jpg" width="1280" height="720" loading="lazy" alt="Sports ground at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>⚽</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/sports-team.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe sports team group photo on the field" />
-      <div class="gallery-overlay"><span>🏆</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/marching-band.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students in a marching band parade formation" />
-      <div class="gallery-overlay"><span>🥁</span></div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/waterfall-excursion.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students on an educational excursion to a waterfall" />
-      <div class="gallery-overlay"><span>🥾</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/flag-hoisting.jpg" width="1280" height="724" loading="lazy" alt="Flag hoisting ceremony at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🇮🇳</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/cultural-program.jpg" width="1280" height="960" loading="lazy" alt="Students performing in a cultural program on stage at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🎭</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/drama-performance.jpg" width="1280" height="960" loading="lazy" alt="Students in costume during a drama performance at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🎬</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/tree-plantation.jpg" width="1280" height="960" loading="lazy" alt="Carmel School Brambe students taking part in a tree plantation drive" />
-      <div class="gallery-overlay"><span>🌳</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/smart-classroom.jpg" width="1280" height="960" loading="lazy" alt="Digital smart classroom with interactive display at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>💻</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/student-project.jpg" width="1280" height="960" loading="lazy" alt="Young student presenting a science project at Carmel School Brambe" />
-      <div class="gallery-overlay"><span>🧠</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/annual-day-group.jpg" width="1280" height="960" loading="lazy" alt="Staff and students in traditional attire at Carmel School Brambe annual day" />
-      <div class="gallery-overlay"><span>🎉</span></div>
     </div>
     <div class="gallery-item">
       <img src="images/science-lab-3.jpg" width="1280" height="720" loading="lazy" alt="Carmel School Brambe science laboratory workstations and equipment" />
-      <div class="gallery-overlay"><span>⚗️</span></div>
     </div>
   </div>
 </section>
 
 <!-- SCHOOL INFO SECTION -->
-<section class="school-info" id="school-info">
+<section class="school-info reveal" id="school-info">
   <div class="school-info-inner">
     <div class="info-left">
       <div class="section-label">Who We Are</div>
@@ -1245,7 +1291,7 @@
 </section>
 
 <!-- STAY INFORMED / NEWS SECTION -->
-<section class="news-section" id="news">
+<section class="news-section reveal" id="news">
   <div class="news-ticker">
     <div class="ticker-label">📢 Latest</div>
     <div class="ticker-track">
@@ -1319,7 +1365,7 @@
 </section>
 
 <!-- PRINCIPAL SECTION -->
-<section class="principal-section" id="principal">
+<section class="principal-section reveal" id="principal">
   <div class="principal-inner">
     <div class="principal-image-col">
       <div class="principal-photo-wrap">
@@ -1356,7 +1402,7 @@
 </section>
 
 <!-- YOUTUBE SECTION -->
-<section class="youtube-section" id="videos">
+<section class="youtube-section reveal" id="videos">
   <div class="yt-header">
     <div>
       <div class="section-label">Our Channel</div>
@@ -1493,7 +1539,7 @@
 </main>
 
 <!-- LOCATION MAP -->
-<section class="about" id="location" style="padding:80px 20px;background:var(--white);">
+<section class="about reveal" id="location" style="padding:80px 20px;background:var(--white);">
   <div style="max-width:1180px;margin:0 auto;">
     <div class="campus-header" style="margin-bottom:40px;">
       <div class="section-label">Find Us</div>
@@ -1540,6 +1586,7 @@
     <li><a href="#school-info">Our Story</a></li>
         <li><a href="#academics">Academics</a></li>
         <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#houses">Houses</a></li>
     <li><a href="#gallery">Campus Life</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1575,6 +1622,12 @@
     <span>Designed with ♥ for <a href="#home">Carmel School Brambe</a></span>
   </div>
 </footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="floating-contact">
+  <a class="float-btn whatsapp" href="https://wa.me/918809278554" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+  <a class="float-btn call" href="tel:+918809278554" title="Call the school" aria-label="Call the school">📞</a>
+</div>
 
 <script>
   // Active nav on scroll
@@ -1629,6 +1682,18 @@
     c.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s, border-color 0.25s';
     cardObserver.observe(c);
   });
+
+  // Scroll reveal for major sections
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
   // Mobile hamburger menu
   const hamburger = document.getElementById('navHamburger');
