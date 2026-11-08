@@ -930,5 +930,148 @@
     @media (max-width: 1440px) { nav { padding: 0 28px; } .nav-links { gap: 20px; } }
     @media (max-width: 1180px) { .nav-links { gap: 14px; } .nav-links a { font-size: 12.5px; } }
     /* decorative quote mark only belongs to the original About block */
-    #location::before, #facilities::before, #houses::before, #faq::before, #admission::before { display: none; }
+    #location::before, #facilities::before, #houses::before, #faq::before, #admission::before, #learning::before { display: none; }
     .contact-card a { word-break: normal; overflow-wrap: anywhere; }
+
+    /* ══ FACILITIES CARDS ══ */
+    .fac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .fac-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+    .fac-card:hover { transform: translateY(-5px); box-shadow: 0 14px 34px rgba(0,0,0,0.12); }
+    .fac-img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--light-bg); }
+    .fac-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+    .fac-card:hover .fac-img img { transform: scale(1.04); }
+    .fac-body { padding: 22px 24px 26px; }
+    .fac-icon { font-size: 24px; margin-bottom: 6px; }
+    .fac-body h3 { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--text); margin-bottom: 8px; }
+    .fac-body > p { font-size: 14.5px; color: var(--text-light); line-height: 1.7; margin-bottom: 14px; }
+    .fac-body .fac-detail { color: #444; }
+    @media (max-width: 1000px) { .fac-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .fac-grid { grid-template-columns: 1fr; } }
+
+    /* ══ BEYOND THE CLASSROOM ══ */
+    .outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+    .outcome { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 26px 18px; text-align: center; }
+    .outcome .oc-icon { font-size: 30px; margin-bottom: 8px; }
+    .outcome h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--maroon); margin-bottom: 6px; }
+    .outcome p { font-size: 13.5px; color: var(--text-light); line-height: 1.65; }
+    @media (max-width: 900px) { .outcome-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .outcome-grid { grid-template-columns: 1fr; } }
+
+    /* ══ NOTICES ══ */
+    .notice-list { display: flex; flex-direction: column; gap: 22px; }
+    .notice-item { background: var(--white); border: 1px solid var(--border); border-left: 5px solid var(--maroon); border-radius: 12px; padding: 28px 30px; box-shadow: 0 4px 18px rgba(0,0,0,0.04); }
+    .notice-tag { display: inline-block; background: #fff8e6; color: #7a5c0a; border: 1px solid #f0dca0; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+    .notice-item h2 { font-family: 'Playfair Display', serif; font-size: 23px; line-height: 1.35; margin-bottom: 10px; color: var(--text); }
+    .notice-item p { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 18px; }
+    .notice-foot { margin-top: 28px; font-size: 14px; color: var(--text-light); text-align: center; line-height: 1.7; }
+    .notice-foot a { color: var(--maroon); font-weight: 600; text-decoration: none; }
+
+    /* ══ EXTRA FACILITIES + ACTIVITY PERIOD ══ */
+    .fac-mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+    .fac-mini { display: flex; gap: 16px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+    .fac-mini .fm-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: var(--light-bg); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+    .fac-mini h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 5px; color: var(--text); }
+    .fac-mini p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+    .act-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+    .act-text { text-align: left; }
+    .act-intro { font-size: 15.5px; color: var(--text-light); line-height: 1.8; margin-bottom: 22px; }
+    .act-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .act-chip { display: flex; align-items: center; gap: 10px; background: var(--cream); border: 1.5px solid var(--border); border-radius: 40px; padding: 10px 20px 10px 14px; font-weight: 600; font-size: 15px; color: var(--text); }
+    .act-chip span { font-size: 22px; }
+    .comp-note { display: flex; gap: 14px; align-items: flex-start; background: #fff8e6; border: 1px solid #f0dca0; border-left: 5px solid var(--gold); border-radius: 10px; padding: 16px 20px; }
+    .comp-note .cn-ic { font-size: 24px; line-height: 1.2; }
+    .comp-note p { font-size: 14.5px; color: #4a3b10; line-height: 1.65; }
+    .act-photo { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.14); }
+    .act-photo img { width: 100%; height: auto; display: block; }
+    .act-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 20px 14px; background: linear-gradient(transparent, rgba(0,0,0,0.65)); color: #fff; font-size: 14px; font-weight: 600; }
+    #activities::before { display: none; }
+    @media (max-width: 900px) { .fac-mini-grid { grid-template-columns: 1fr; } .act-wrap { grid-template-columns: 1fr; gap: 30px; } }
+
+    /* ══════════════════════════════════════════════
+       HERO "Contact Us" button — restore original look
+       (a later .btn-outline rule had turned it dark maroon on the photo)
+       ══════════════════════════════════════════════ */
+    .hero-btns .btn-outline {
+      display: inline-block; border: 1.5px solid rgba(255,255,255,0.7); color: var(--white);
+      padding: 13px 28px; border-radius: 6px; text-decoration: none;
+      font-size: 14px; font-weight: 500; transition: all 0.2s;
+      backdrop-filter: blur(4px); background: rgba(255,255,255,0.08);
+    }
+    .hero-btns .btn-outline:hover { background: rgba(255,255,255,0.18); border-color: var(--white); color: var(--white); }
+
+    /* ══════════════════════════════════════════════
+       PHONE OPTIMISATION  (everything below only applies on small screens;
+       desktop layout is untouched)
+       ══════════════════════════════════════════════ */
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    img, video, iframe { max-width: 100%; }
+
+    @media (max-width: 768px) {
+      /* ── header ── */
+      nav { padding: 0 14px; height: 64px; gap: 10px; }
+      .nav-logo { gap: 9px; min-width: 0; }
+      .nav-logo-icon { width: 40px; height: 40px; flex-shrink: 0; }
+      .nav-logo-text { min-width: 0; }
+      .nav-logo-text .school-name { font-size: 12.5px; line-height: 1.15; letter-spacing: 0.2px; }
+      .icse-pill-nav { font-size: 9px; padding: 2px 8px; white-space: nowrap; margin-top: 3px; }
+      .btn-enquiry { padding: 9px 14px; font-size: 12.5px; border-radius: 6px; line-height: 1.2; text-align: center; }
+      .nav-hamburger { flex-shrink: 0; width: 40px; height: 40px; }
+      .mobile-menu { height: 100vh; height: 100dvh; width: min(290px, 84vw); right: -100vw; }
+      .mobile-menu.active { right: 0; }
+      .mobile-menu li a { padding: 15px 24px; }
+      .mobile-menu li:nth-last-child(2) a { color: var(--maroon); }
+
+      /* ── hero ── */
+      .hero-btns { gap: 10px; }
+      .hero-btns .btn-primary, .hero-btns .btn-outline { padding: 13px 22px; }
+
+      /* ── about (was running off the right edge) ── */
+      .about-inner > *, .about-text, .about-image-wrap, .about-features { min-width: 0; }
+      .about-image-wrap { max-width: 100%; }
+      .about-image-badge { right: 8px; }
+      .about-text p { margin-bottom: 24px; }
+
+      /* ── cards & spacing ── */
+      .academic-card { padding: 24px 14px; }
+      .stat-item { padding: 30px 12px; }
+      .stat-num { font-size: 40px; }
+      .info-card { padding: 24px 22px; }
+      .message-card { padding: 24px 20px; }
+      .fac-body { padding: 18px 18px 22px; }
+      .fac-mini { padding: 18px; }
+      .house-card { padding: 24px 14px; }
+
+      /* ── gallery: bigger thumbnails (3 tiny columns → 2) ── */
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: auto; aspect-ratio: 4 / 3; }
+
+      /* ── floating buttons: smaller, tucked into the corner ── */
+      .floating-contact { right: 10px; bottom: 12px; gap: 10px; }
+      .float-btn { width: 44px; height: 44px; font-size: 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .about-features { grid-template-columns: 1fr; gap: 14px; }
+      .btn-enquiry { display: none; }          /* Admission stays one tap away: menu, hero banner, call/WhatsApp buttons */
+      nav { padding: 0 14px; }
+      .hero-content { padding: 0 20px; }
+      .hero-btns .btn-primary, .hero-btns .btn-outline { flex: 1 1 140px; text-align: center; }
+      .academics-grid { gap: 12px; }
+      .section-title { font-size: 28px; line-height: 1.25; }
+      .adm-cta { padding: 40px 18px; }
+      .adm-cta-actions { width: 100%; }
+      .adm-cta-actions a { flex: 1 1 100%; text-align: center; }
+      .notice-item { padding: 22px 18px; }
+      .contact-card { padding: 22px 16px; }
+      .app-banner-left, .app-banner-right { min-width: 0; max-width: 100%; }
+      .app-features { flex-wrap: wrap; gap: 8px 16px; }
+    }
+
+    @media (max-width: 360px) {
+      .nav-logo-text .school-name { font-size: 11.5px; }
+      .stat-num { font-size: 34px; }
+      .academics-grid { grid-template-columns: 1fr; }
+      .house-grid { gap: 12px; }
+    }
+
+    @media (max-width: 768px) { .hero-scroll-hint { display: none; } }
